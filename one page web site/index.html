@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		One page web site
+	</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
+	<script type="text/javascript" src="js/jquery-2.2.1.js"></script>
+</head>
+<body>
+	<div class="main">
+		<div class="navbar">
+			<div class="navbar-pull-right">
+				<ul>
+					<li><a id="#home">Home</a></li>
+					<li><a id="#about">About</a></li>
+					<li><a id="#portofolio">Portofolio</a></li>
+					<li><a id="#team">Team</a></li>
+					<li><a id="#contact">Contact</a></li>
+					<li><a id="#services">Services</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- 	navbar end here -->
+		<div class="rise-top" id="#home"> <img src="icon.jpg" style="width: 100%; background-color: gray"></div>
+
+		<div class="home common" id="home">
+			<h2>Home page</h2>
+		</div>
+		<div class="about common" id="about">
+			<h2>About page</h2>
+		</div>
+		<div class="portofolio common" id="portofolio">
+			<h2>Portofolio page</h2>
+		</div>
+		<div class="team common" id="team">
+			<h2>Team Page</h2>
+		</div>
+		<div class="contact common" id="contact">
+			<h2> Contact page</h2>
+		</div>
+		<div class="services common" id="services">
+			<h2>Services page</h2>
+		</div>
+
+
+
+	</div>
+
+<script type="text/javascript">
+var sheight;
+var target;
+var deyisken;
+$(document).ready(function(){
+sheight = $(window).innerHeight();
+// device-in olcusune uygun height vermek ucun
+$(".common").css('height',sheight)
+// li lere tikliyanda  cslide metodunu isleden method
+$('ul li a').on('click',cslide);
+
+// bu da esas methodumuz
+	function cslide(){
+		 target = $(this).attr('id');
+		 $("body").animate({'scrollTop':$(target).offset().top},2000);
+		
+
+	}
+	$('.rise-top').on('click',qaldir);
+	function qaldir(){
+		target = $(this).attr('id');
+		$("body").animate({'scrollTop' :$(target).offset().top});
+		
+		
+	}
+	
+		
+	
+
+
+
+	
+});
+</script>
+</body>
+</html>
